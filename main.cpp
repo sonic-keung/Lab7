@@ -52,6 +52,8 @@ int main () {
         unsigned int end_time;
         iss >> courseName;
         iss >> tempDay;
+        iss >> start_time;
+        iss >> end_time;
         switch(tempDay) {
             case 'M':
                 day = Course::MON;
@@ -71,8 +73,6 @@ int main () {
             default:
                 break;
         }
-        iss >> start_time;
-        iss >> end_time;
         Course course(courseName, day, start_time, end_time);
         myVector.push_back(course);
     }
