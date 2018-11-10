@@ -18,9 +18,10 @@ using namespace std;
  */
 void printSchedule(vector<Course> &path)
 {
+    // use 2 iterators to display conflict schedules
     for(auto i = path.begin(); i != prev(path.end()); ++i) {
         for(auto j = next(i); j != path.end(); ++j) {
-            if((j->start_time >= i->start_time && j->start_time <= i->finish_time && j->day == i->day)
+            if(j->start_time >= i->start_time && j->start_time <= i->finish_time && j->day == i->day
                || (j->finish_time >= i->start_time && j->finish_time <= i->finish_time && j->day == i->day)) {
                 cout << "CONFLICT:" << endl;
                 cout << *i;
