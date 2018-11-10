@@ -31,6 +31,8 @@ bool Course::operator < (const Course & m) const
 {
     if (this->day < m.day) {
         return true;
+    } else if (this-> day == m.day) {
+        return (this->start_time < m.start_time);
     }
     return false;
 }
